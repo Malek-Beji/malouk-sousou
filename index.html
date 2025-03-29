@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Moments Précieux</title>
+    <link rel="shortcut icon" href="coeur.png" type="image/x-icon">
+    <style>
+        /* Variables CSS pour la palette de couleurs */
+        :root {
+            --rose-tendre: #f8d7da;
+            --rose-moyen: #e4b1b6; 
+            --rose-vif: #ff94a4;
+            --bordeaux: #722f37;
+            --bordeaux-fonce: #5a1f27;
+            --bordeaux-clair: #9e4553;
+            --blanc: #fff;
+            --blanc-casse: #fdf6f7;
+            --noir-romantique: #1a1215;
+            --or: #d4af37;
+            --transition-standard: all 0.3s ease-in-out;
+            --ombre-douce: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --ombre-forte: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Import de polices Google */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&display=swap');
+
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', Georgia, serif;
+            background-color: var(--blanc);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f8d7da' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: var(--bordeaux);
+            transition: var(--transition-standard);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body.dark-mode {
+            background-color: var(--noir-romantique);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23722f37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: var(--rose-tendre);
+        }
+
+        /* En-tête élégant */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(to right, var(--rose-tendre), var(--rose-moyen));
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-standard);
+        }
+
+        body.dark-mode header {
+            background: linear-gradient(to right, var(--bordeaux-fonce), var(--bordeaux));
+        }
+
+        /* Titre principal */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Dancing Script', cursive;
+            color: var(--bordeaux);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+            transition: var(--transition-standard);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::before, h1::after {
+            content: "♥";
+            position: absolute;
+            font-size: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--rose-vif);
+            opacity: 0.8;
+            font-family: serif;
+        }
+        
+        h1::before {
+            left: -2rem;
+        }
+        
+        h1::after {
+            right: -2rem;
+        }
+        
+        body.dark-mode h1 {
+            color: var(--blanc);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(248, 215, 218, 0.8);
+        }
+        
+        body.dark-mode h1::before, 
+        body.dark-mode h1::after {
+            color: var(--rose-moyen);
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--bordeaux-clair);
+            position: relative;
+            display: inline-block;
+            padding: 0 30px;
+        }
+        
+        .subtitle::before, .subtitle::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 25px;
+            height: 1px;
+            background: var(--bordeaux-clair);
+            opacity: 0.6;
+        }
+        
+        .subtitle::before {
+            left: 0;
+        }
+        
+        .subtitle::after {
+            right: 0;
+        }
+        
+        body.dark-mode .subtitle {
+            color: var(--rose-moyen);
+        }
+        
+        body.dark-mode .subtitle::before, 
+        body.dark-mode .subtitle::after {
+            background: var(--rose-moyen);
+        }
+
+        /* Contrôles */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background-color: var(--bordeaux);
+            color: var(--blanc);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: var(--transition-standard);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .control-btn:hover {
+            background-color: var(--bordeaux-fonce);
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode .control-btn {
+            background-color: var(--rose-moyen);
+            color: var(--noir-romantique);
+        }
+
+        body.dark-mode .control-btn:hover {
+            background-color: var(--rose-tendre);
+        }
+
+        /* Grille de photos responsive */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-grid.loading {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: var(--transition-standard);
+            border: 3px solid var(--rose-tendre);
+            background-color: var(--blanc);
+            transform-origin: center;
+            z-index: 1;
+            height: 300px;
+        }
+        
+        .photo-item::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid var(--or);
+            border-radius: 12px;
+            opacity: 0;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        body.dark-mode .photo-item {
+            border-color: var(--bordeaux);
+            background-color: var(--noir-romantique);
+        }
+
+        .photo-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: var(--bordeaux);
+            z-index: 2;
+        }
+        
+        .photo-item:hover::before {
+            opacity: 0.6;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+        }
+
+        body.dark-mode .photo-item:hover {
+            border-color: var(--rose-moyen);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 220px;
+            background-color: var(--rose-tendre);
+            opacity: 0.6;
+            transition: opacity 0.5s ease;
+        }
+
+        .image-container.loaded {
+            opacity: 1;
+        }
+
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(114, 47, 55, 0.1);
+            border-top: 3px solid var(--bordeaux);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 0.8s linear infinite;
+            z-index: 1;
+        }
+
+        .image-container.loaded .spinner {
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-description {
+            padding: 1.2rem;
+            background-color: var(--rose-tendre);
+            background-image: linear-gradient(45deg, var(--rose-tendre), var(--rose-moyen));
+            color: var(--bordeaux);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition-standard);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        
+        .photo-description::before {
+            content: "❝";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 1.5rem;
+            opacity: 0.5;
+            color: var(--bordeaux-clair);
+        }
+        
+        .photo-description::after {
+            content: "❞";
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0.5;
+            color: var(--bordeaux-clair);
+        }
+
+        body.dark-mode .photo-description {
+            background-color: var(--bordeaux-fonce);
+            color: var(--rose-tendre);
+        }
+
+        .photo-item:hover .photo-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Viewer en plein écran */
+        .fullscreen-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 18, 21, 0.95);
+            background-image: radial-gradient(circle at center, rgba(114, 47, 55, 0.3) 0%, rgba(0, 0, 0, 0.9) 70%);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            backdrop-filter: blur(5px);
+        }
+
+        .fullscreen-viewer.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .viewer-content {
+            max-width: 90%;
+            max-height: 80%;
+            position: relative;
+        }
+
+        .viewer-img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .viewer-description {
+            color: var(--blanc);
+            text-align: center;
+            padding: 1rem;
+            max-width: 800px;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            background-color: rgba(114, 47, 55, 0.7);
+            border-radius: 8px;
+        }
+
+        .close-viewer {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bordeaux);
+            color: var(--blanc);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-standard);
+        }
+
+        .close-viewer:hover {
+            background: var(--rose-moyen);
+            transform: rotate(90deg);
+        }
+
+        .viewer-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            transform: translateY(-50%);
+        }
+
+        .nav-btn {
+            background: var(--bordeaux);
+            color: var(--blanc);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-standard);
+        }
+
+        .nav-btn:hover {
+            background: var(--rose-moyen);
+            transform: scale(1.1);
+        }
+
+        /* Animation optimisées */
+        .fade-in-fast {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInFast 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeInFast {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        .rotate-animation {
+            animation: rotate 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Cœurs flottants */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23f8d7da' d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.9-207.9z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+            opacity: 0;
+            animation: heartFloat 5s linear infinite;
+            filter: drop-shadow(0 0 3px rgba(255, 182, 193, 0.7));
+        }
+
+        .heart.small {
+            width: 15px;
+            height: 15px;
+            animation-duration: 7s;
+        }
+
+        .heart.medium {
+            width: 25px;
+            height: 25px;
+            animation-duration: 6s;
+        }
+
+        .heart.large {
+            width: 35px;
+            height: 35px;
+            animation-duration: 8s;
+        }
+
+        .heart.pink {
+            filter: hue-rotate(0deg) drop-shadow(0 0 3px rgba(255, 182, 193, 0.7));
+        }
+
+        .heart.red {
+            filter: hue-rotate(-10deg) saturate(1.5) drop-shadow(0 0 3px rgba(255, 0, 0, 0.7));
+        }
+
+        .heart.purple {
+            filter: hue-rotate(40deg) drop-shadow(0 0 3px rgba(221, 160, 221, 0.7));
+        }
+
+        body.dark-mode .heart {
+            background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23722f37' d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.9-207.9z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+        }
+
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-800px) scale(1.2) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, var(--rose-tendre), var(--rose-moyen));
+            margin-top: 2rem;
+            transition: var(--transition-standard);
+        }
+
+        body.dark-mode footer {
+            background: linear-gradient(to right, var(--bordeaux-fonce), var(--bordeaux));
+        }
+
+        /* Styles responsifs */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .controls {
+                gap: 0.8rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .viewer-img {
+                max-height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête élégant -->
+    <header>
+        <h1>Nos Moments Précieux</h1>
+        <p class="subtitle">Une collection de souvenirs romantiques</p>
+        
+        <div class="controls">
+            <button class="control-btn" id="load-more-btn">
+                <span class="icon">↻</span> Nouvelles Photos
+            </button>
+            
+            <button class="control-btn" id="slideshow-toggle">
+                <span class="icon">▶</span> Diaporama
+            </button>
+            
+            <button class="control-btn" id="dark-mode-toggle">
+                <span class="icon">☾</span> Mode Nuit
+            </button>
+        </div>
+    </header>
+
+    <!-- Conteneur principal de la galerie -->
+    <main class="gallery-container">
+        <div class="photo-grid" id="photo-grid">
+            <!-- Les photos seront générées par JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Créé avec ♥ pour immortaliser nos plus beaux souvenirs</p>
+    </footer>
+
+    <!-- Viewer en plein écran -->
+    <div class="fullscreen-viewer" id="fullscreen-viewer">
+        <button class="close-viewer" id="close-viewer">×</button>
+        
+        <div class="viewer-content">
+            <img src="" alt="Image en plein écran" class="viewer-img" id="viewer-img">
+            <div class="viewer-nav">
+                <button class="nav-btn prev-btn" id="prev-btn">❮</button>
+                <button class="nav-btn next-btn" id="next-btn">❯</button>
+            </div>
+        </div>
+        
+        <div class="viewer-description" id="viewer-description"></div>
+    </div>
+
+    <!-- Conteneur pour les particules en forme de cœur -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Audio background -->
+    <audio id="background-music" loop>
+        <source src="Eartha-Kitt-Santa-Baby.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        // Liste des images
+        const imagesList = [
+            "images/2024_11_25_14_47_IMG_1284.JPG",
+            "images/2024_12_01_19_17_IMG_1465.jpg",
+            "images/2024_12_08_15_10_IMG_1594.jpg",
+            "images/2024_12_08_15_10_IMG_1595.jpg",
+            "images/2024_12_11_14_12_IMG_1664.JPG",
+            "images/2024_12_11_16_54_IMG_1678.jpg",
+            "images/2024_12_16_13_44_IMG_1777.JPG",
+            "images/2024_12_19_13_38_IMG_1831.jpg",
+            "images/2024_12_19_14_00_IMG_1833.JPG",
+            "images/2024_12_19_16_00_IMG_1837.JPG",
+            "images/2024_12_22_15_41_IMG_1875.jpg",
+            "images/2025_01_01_17_24_IMG_2078.jpg",
+            "images/2025_01_03_15_32_IMG_2121.jpg",
+            "images/2025_01_03_15_32_IMG_2123.jpg",
+            "images/2025_01_05_15_21_IMG_2177.jpg",
+            "images/2025_01_07_20_01_IMG_2209.jpg",
+            "images/2025_01_12_18_45_IMG_2343.jpg",
+            "images/2025_01_17_18_19_IMG_2460.jpg",
+            "images/2025_01_17_22_06_IMG_2481.jpg",
+            "images/2025_01_23_17_53_IMG_2658.jpg",
+            "images/2025_01_25_21_15_IMG_2688.jpg",
+            "images/2025_01_25_22_49_IMG_2697.jpg",
+            "images/2025_01_25_22_52_IMG_2704.jpg",
+            "images/2025_01_28_18_37_IMG_2766.jpg",
+            "images/2025_01_28_19_24_IMG_2770.jpg",
+            "images/2025_01_30_21_49_IMG_2816.jpg",
+            "images/2025_01_31_00_09_IMG_2818.JPG",
+            "images/2025_01_31_00_09_IMG_2819.JPG",
+            "images/2025_02_01_17_04_IMG_2858.jpg",
+            "images/2025_02_01_19_22_IMG_2899.jpg",
+            "images/2025_02_01_19_36_IMG_2902.jpg",
+            "images/2025_02_02_16_02_IMG_2944.jpg",
+            "images/2025_02_02_19_09_IMG_2963.jpg",
+            "images/2025_02_05_12_42_IMG_3066.jpg",
+            "images/2025_02_05_12_46_IMG_3071.jpg",
+            "images/2025_02_05_14_37_IMG_3098.jpg",
+            "images/2025_02_05_14_44_IMG_3103.jpg",
+            "images/2025_02_05_16_29_IMG_3166.jpg",
+            "images/2025_02_07_17_19_IMG_3229.jpg",
+            "images/2025_02_07_23_23_IMG_3244.JPG",
+            "images/2025_02_14_19_33_IMG_3306.jpg",
+            "images/2025_02_14_21_33_IMG_3332.jpg",
+            "images/2025_02_14_21_34_IMG_3344.jpg",
+            "images/2025_02_16_15_37_IMG_3477.jpg",
+            "images/2025_02_16_16_06_IMG_3434.jpg",
+            "images/2025_02_16_16_39_IMG_3470.jpg",
+            "images/2025_02_18_17_34_IMG_3596.jpg",
+            "images/2025_02_18_17_46_IMG_3564.jpg",
+            "images/2025_02_18_17_46_IMG_3565.jpg",
+            "images/2025_02_18_17_47_IMG_3573.jpg",
+            "images/2025_02_18_17_57_IMG_3584.jpg",
+            "images/2025_02_22_14_10_IMG_3678.jpg",
+            "images/2025_03_06_22_52_IMG_3942.jpg",
+            "images/2025_03_14_21_29_IMG_4056.jpg",
+            "images/2025_03_19_22_51_IMG_4104.jpg",
+            "images/2025_03_22_13_30_IMG_4171.jpg",
+            "images/2025_03_22_14_00_IMG_4194.jpg",
+            "images/2025_03_27_21_49_IMG_4308.jpg"
+        ];
+    
+        // Textes romantiques pour les descriptions des photos
+        const descriptions = [
+            'Le jour où nous nous sommes rencontrés, le temps s\'est arrêté et le monde est devenu plus lumineux.',
+            'Chaque coucher de soleil avec toi est une promesse d\'un lendemain plus beau encore.',
+            'Nos mains entrelacées racontent une histoire que les mots ne peuvent exprimer.',
+            'Dans ce petit café italien, j\'ai su que mon cœur t\'appartiendrait à jamais.',
+            'Le monde entier semblait disparaître quand tu m\'as regardé ce jour-là.',
+            'Ce voyage au bord de la mer reste gravé dans ma mémoire comme le plus doux des souvenirs.',
+            'Notre premier Noël ensemble, la neige tombait doucement comme pour bénir notre amour.',
+            'Sous cet arbre centenaire, nos âmes se sont reconnues une fois de plus.',
+            'Dans ce jardin de fleurs, ton sourire était la plus belle des roses.',
+            'Ce bal masqué où nos regards se sont trouvés, même cachés derrière des masques.',
+            'La promesse d\'une vie ensemble scellée par un baiser sous les étoiles.',
+            'Chaque jour à tes côtés est une page de plus dans le plus beau des romans d\'amour.',
+            'Ces instants volés, loin des regards, sont les plus précieux de nos souvenirs.',
+            'Ton rire est la musique qui fait danser mon cœur depuis notre première rencontre.',
+            'Ce premier voyage ensemble a scellé notre destin sous des cieux étoilés.',
+            'Une danse sous la pluie qui a effacé toutes mes peurs et mes doutes.',
+            'Deux âmes qui se sont reconnues à travers le temps et l\'espace.',
+            'Ces moments de complicité silencieuse valent tous les mots d\'amour du monde.',
+            'La magie de nos regards qui se croisent et qui se comprennent sans rien dire.',
+            'Ton sourire illumine ma vie chaque jour comme le premier jour.'
+        ];
+    
+        // Variables globales
+        let allPhotos = []; // Stockera toutes les photos avec leurs métadonnées
+        let displayedPhotos = []; // Stockera les photos actuellement affichées
+        let currentPhotoIndex = 0;
+        let slideshowActive = false;
+        let slideshowInterval;
+        let heartsActive = false;
+        let heartsInterval;
+    
+        // Éléments DOM
+        const photoGrid = document.getElementById('photo-grid');
+        const fullscreenViewer = document.getElementById('fullscreen-viewer');
+        const viewerImg = document.getElementById('viewer-img');
+        const viewerDescription = document.getElementById('viewer-description');
+        const closeViewer = document.getElementById('close-viewer');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideshowToggle = document.getElementById('slideshow-toggle');
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const heartsContainer = document.getElementById('hearts-container');
+        const backgroundMusic = document.getElementById('background-music');
+    
+        // Fonction pour mélanger un tableau (algorithme de Fisher-Yates)
+        function shuffleArray(array) {
+            const newArray = [...array]; // Créer une copie pour ne pas modifier l'original
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+    
+        // Fonction pour déterminer si une image est au format HEIC
+        function isHeicImage(url) {
+            return url.toLowerCase().endsWith('.heic');
+        }
+    
+        // Fonction pour créer un tableau de photos aléatoires
+        function getRandomPhotos(count) {
+            // Mélanger le tableau d'images
+            const shuffledImages = shuffleArray(imagesList);
+            
+            // Prendre les 'count' premières images
+            const selectedImages = shuffledImages.slice(0, Math.min(count, shuffledImages.length));
+            
+            // Créer des objets photo avec descriptions aléatoires
+            return selectedImages.map(url => {
+                const descIndex = Math.floor(Math.random() * descriptions.length);
+                return {
+                    url: url,
+                    description: descriptions[descIndex],
+                    isjpg: !isHeicImage(url)
+                };
+            });
+        }
+    
+        // Initialisation de la galerie
+        function initGallery() {
+            // Initialiser tous les tableaux de photos
+            allPhotos = imagesList.map((url, index) => {
+                const descIndex = Math.floor(Math.random() * descriptions.length);
+                return {
+                    url: url,
+                    description: descriptions[descIndex],
+                    isjpg: !isHeicImage(url)
+                };
+            });
+            
+            // Mélanger et sélectionner 20 photos aléatoires pour l'affichage initial
+            displayedPhotos = getRandomPhotos(20);
+            
+            // Rendre la grille de photos
+            renderPhotoGrid();
+            
+            // Configurer les écouteurs d'événements
+            setupEventListeners();
+            
+            // Vérifier les préférences
+            checkPreferences();
+        }
+    
+        // Fonction optimisée pour le rendu de la grille de photos
+        function renderPhotoGrid() {
+            photoGrid.innerHTML = '';
+            
+            displayedPhotos.forEach((photo, index) => {
+                const photoItem = document.createElement('div');
+                photoItem.className = 'photo-item fade-in-fast';
+                photoItem.setAttribute('data-index', index);
+                
+                // Ajouter un petit délai pour chaque photo pour créer un effet cascade
+                photoItem.style.animationDelay = `${index * 50}ms`;
+                
+                // Pour les images HEIC, utiliser un placeholder
+                const imgSrc = photo.isjpg ? photo.url : `/api/placeholder/400/300?text=${photo.url.split('/').pop()}`;
+                
+                photoItem.innerHTML = `
+                    <div class="image-container">
+                        <div class="spinner"></div>
+                        <img src="${imgSrc}" alt="Photo romantique ${index + 1}" loading="lazy" onload="this.parentNode.classList.add('loaded')">
+                    </div>
+                    <div class="photo-description">${photo.description}</div>
+                `;
+                
+                photoGrid.appendChild(photoItem);
+            });
+        }
+    
+        // Configuration des écouteurs d'événements
+        function setupEventListeners() {
+            // Écouteurs pour la galerie
+            photoGrid.addEventListener('click', handlePhotoClick);
+            
+            // Écouteurs pour le viewer
+            closeViewer.addEventListener('click', closeFullscreenViewer);
+            prevBtn.addEventListener('click', showPreviousPhoto);
+            nextBtn.addEventListener('click', showNextPhoto);
+            
+            // Écouteurs pour les contrôles
+            slideshowToggle.addEventListener('click', toggleSlideshow);
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+            
+            // Écouteur pour le bouton "Afficher d'autres photos"
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', loadMorePhotos);
+            }
+            
+            // Écouteur pour les touches du clavier
+            document.addEventListener('keydown', handleKeyPress);
+        }
+    
+        // Fonction optimisée pour le chargement des photos avec animation
+        function loadMorePhotos() {
+            // Ajouter une animation au bouton
+            loadMoreBtn.classList.add('rotate-animation');
+            
+            // Ajout d'une classe pour indiquer le chargement
+            photoGrid.classList.add('loading');
+            
+            // Générer 20 nouvelles photos aléatoires
+            const newPhotos = getRandomPhotos(20);
+            
+            // Simuler un petit délai pour montrer l'animation de chargement
+            setTimeout(() => {
+                // Mettre à jour les photos
+                displayedPhotos = newPhotos;
+                
+                // Vider la grille
+                photoGrid.innerHTML = '';
+                
+                // Ajouter les nouvelles photos avec animation
+                renderPhotoGrid();
+                
+                // Retirer la classe de chargement
+                photoGrid.classList.remove('loading');
+                
+                // Retirer l'animation du bouton
+                setTimeout(() => {
+                    loadMoreBtn.classList.remove('rotate-animation');
+                }, 500);
+                
+                // Faire défiler vers le haut pour voir les nouvelles photos
+                window.scrollTo({
+                    top: photoGrid.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    
+        // Préchargement des images pour une expérience plus fluide
+        function preloadImages(imageUrls, callback) {
+            let loadedCount = 0;
+            const totalImages = imageUrls.length;
+            
+            // Si aucune image à précharger, appeler immédiatement le callback
+            if (totalImages === 0) {
+                callback();
+                return;
+            }
+            
+            imageUrls.forEach(url => {
+                const img = new Image();
+                img.onload = img.onerror = () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                        callback();
+                    }
+                };
+                img.src = url;
+            });
+        }
+    
+        // Vérification des préférences utilisateur
+        function checkPreferences() {
+            // Vérifier si le mode sombre est activé
+            const darkModePreferred = localStorage.getItem('darkMode') === 'true';
+            if (darkModePreferred) {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.innerHTML = '<span class="icon">☀</span> Mode Jour';
+            }
+            
+            // Activer les cœurs directement
+            startHearts();
+            heartsActive = true;
+            
+            // Essayer de démarrer la musique en arrière-plan (sera probablement bloqué)
+            try {
+                backgroundMusic.volume = 0.5;
+                backgroundMusic.play().catch(error => {
+                    console.log('Info: Lecture automatique de la musique bloquée', error);
+                });
+            } catch (error) {
+                console.log('Info: Erreur lors de la lecture de la musique', error);
+            }
+        }
+    
+        // Gestion du clic sur une photo
+        function handlePhotoClick(event) {
+            const photoItem = event.target.closest('.photo-item');
+            if (photoItem) {
+                const index = parseInt(photoItem.getAttribute('data-index'));
+                openFullscreenViewer(index);
+            }
+        }
+    
+        // Ouverture du viewer en plein écran
+        function openFullscreenViewer(index) {
+            currentPhotoIndex = index;
+            
+            const photo = displayedPhotos[index];
+            
+            // Pour les images HEIC, utiliser un placeholder dans le viewer aussi
+            const imgSrc = photo.isjpg ? photo.url : `/api/placeholder/800/600?text=${photo.url.split('/').pop()}`;
+            
+            viewerImg.src = imgSrc;
+            viewerDescription.textContent = photo.description;
+            
+            // Afficher le viewer
+            fullscreenViewer.classList.add('active');
+            
+            // Ajouter l'animation de fondu
+            viewerImg.classList.add('fade-in');
+            
+            // Réinitialiser l'animation après la transition
+            setTimeout(() => {
+                viewerImg.classList.remove('fade-in');
+            }, 500);
+        }
+    
+        // Fermeture du viewer
+        function closeFullscreenViewer() {
+            fullscreenViewer.classList.remove('active');
+            
+            // Si le diaporama est actif, l'arrêter
+            if (slideshowActive) {
+                toggleSlideshow();
+            }
+        }
+    
+        // Afficher la photo précédente
+        function showPreviousPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + displayedPhotos.length) % displayedPhotos.length;
+            openFullscreenViewer(currentPhotoIndex);
+        }
+    
+        // Afficher la photo suivante
+        function showNextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % displayedPhotos.length;
+            openFullscreenViewer(currentPhotoIndex);
+        }
+    
+        // Activation/désactivation du diaporama
+        function toggleSlideshow() {
+            slideshowActive = !slideshowActive;
+            
+            if (slideshowActive) {
+                // Si le viewer n'est pas ouvert, ouvrir avec la première photo
+                if (!fullscreenViewer.classList.contains('active')) {
+                    openFullscreenViewer(0);
+                }
+                
+                slideshowToggle.innerHTML = '<span class="icon">⏸</span> Pause';
+                startSlideshow();
+            } else {
+                slideshowToggle.innerHTML = '<span class="icon">▶</span> Diaporama';
+                stopSlideshow();
+            }
+        }
+    
+        // Démarrage du diaporama
+        function startSlideshow() {
+            slideshowInterval = setInterval(() => {
+                showNextPhoto();
+            }, 4000); // Changement toutes les 4 secondes
+        }
+    
+        // Arrêt du diaporama
+        function stopSlideshow() {
+            clearInterval(slideshowInterval);
+        }
+    
+        // Démarrage de l'effet de cœurs
+        function startHearts() {
+            // Création de cœurs initiaux
+            for (let i = 0; i < 15; i++) {
+                createHeart();
+            }
+            
+            // Création de nouveaux cœurs à intervalles réguliers
+            heartsInterval = setInterval(() => {
+                // Créer plusieurs cœurs à la fois (1-3)
+                const heartsToCreate = Math.floor(Math.random() * 3) + 1;
+                for (let i = 0; i < heartsToCreate; i++) {
+                    createHeart();
+                }
+            }, 500);
+        }
+    
+        // Arrêt de l'effet de cœurs
+        function stopHearts() {
+            clearInterval(heartsInterval);
+            heartsContainer.innerHTML = '';
+        }
+    
+        // Création d'un cœur avec variation
+        function createHeart() {
+            const heart = document.createElement('div');
+            
+            // Classes de base pour tous les cœurs
+            heart.className = 'heart';
+            
+            // Classes aléatoires pour la taille
+            const sizeClasses = ['small', 'medium', 'large'];
+            const randomSizeClass = sizeClasses[Math.floor(Math.random() * sizeClasses.length)];
+            heart.classList.add(randomSizeClass);
+            
+            // Classes aléatoires pour la couleur
+            const colorClasses = ['pink', 'red', 'purple'];
+            const randomColorClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+            heart.classList.add(randomColorClass);
+            
+            // Position aléatoire en bas de l'écran
+            const startPositionX = Math.random() * window.innerWidth;
+            heart.style.left = `${startPositionX}px`;
+            heart.style.bottom = '-20px';
+            
+            // Variation légère dans l'apparition
+            const delay = Math.random() * 2;
+            heart.style.animationDelay = `${delay}s`;
+            
+            // Durée d'animation aléatoire
+            const baseAnimationDuration = 7;
+            const randomOffset = Math.random() * 6 - 3; // entre -3 et +3
+            const animationDuration = baseAnimationDuration + randomOffset;
+            heart.style.animationDuration = `${animationDuration}s`;
+            
+            heartsContainer.appendChild(heart);
+            
+            // Supprimer le cœur après l'animation
+            setTimeout(() => {
+                heart.remove();
+            }, (animationDuration + delay) * 1000);
+        }
+    
+        // Activation/désactivation du mode nuit
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            
+            // Sauvegarder la préférence
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+            
+            // Mettre à jour le texte du bouton
+            if (isDarkMode) {
+                darkModeToggle.innerHTML = '<span class="icon">☀</span> Mode Jour';
+            } else {
+                darkModeToggle.innerHTML = '<span class="icon">☾</span> Mode Nuit';
+            }
+        }
+    
+        // Gestion des touches du clavier
+        function handleKeyPress(event) {
+            if (fullscreenViewer.classList.contains('active')) {
+                switch (event.key) {
+                    case 'Escape':
+                        closeFullscreenViewer();
+                        break;
+                    case 'ArrowLeft':
+                        showPreviousPhoto();
+                        break;
+                    case 'ArrowRight':
+                        showNextPhoto();
+                        break;
+                    case ' ': // Espace
+                        toggleSlideshow();
+                        break;
+                }
+            }
+        }
+    
+        // Cette fonction tente de démarrer la musique
+        function playBackgroundMusic() {
+            backgroundMusic.volume = 0.5; // Volume à 50%
+            
+            // Tenter de jouer la musique
+            backgroundMusic.play().catch(error => {
+                console.log('La lecture automatique a été bloquée par le navigateur. Cliquez n\'importe où sur la page pour activer la musique.');
+            });
+        }
+    
+        // Assurer que la musique joue même si l'utilisateur change d'onglet ou revient sur la page
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && backgroundMusic.paused) {
+                backgroundMusic.play().catch(e => {});
+            }
+        });
+    
+        // Démarrer la musique automatiquement au chargement
+        window.addEventListener('load', playBackgroundMusic);
+    
+        // Permettre à l'utilisateur de démarrer la musique en cliquant sur la page
+        document.addEventListener('click', function() {
+            if (backgroundMusic.paused) {
+                playBackgroundMusic();
+            }
+        }, { once: true });
+    
+        // Initialiser la galerie au chargement
+        initGallery();
+    });</script>
